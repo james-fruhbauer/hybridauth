@@ -856,7 +856,9 @@ class LightOpenID
             return false;
         }
 
-        $this->claimed_id = isset($this->data['openid_claimed_id'])?$this->data['openid_claimed_id']:$this->data['openid_identity'];
+        #$this->claimed_id = isset($this->data['openid_claimed_id'])?$this->data['openid_claimed_id']:$this->data['openid_identity'];
+        $this->claimed_id = $this->data['openid_identity'];
+
         $params = array(
             'openid.assoc_handle' => $this->data['openid_assoc_handle'],
             'openid.signed'       => $this->data['openid_signed'],
